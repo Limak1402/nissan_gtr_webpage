@@ -1,0 +1,1138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat',sans-serif;
+  box-sizing: border-box; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  background: #151515;
+  padding: 5px 40px;
+}
+
+nav ul { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  padding: 20px 0;
+}
+
+nav ul li.items {
+  position: relative;
+  width: auto;
+  margin: 0 15px;
+  text-align: center;
+  order: 3;
+}
+
+nav ul li.items:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 5px;
+  height: 3px;
+  width: 100%;
+  background: #00ccff;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+nav ul li.items:hover:after {
+  opacity: 1;
+  bottom: 10px;
+}
+
+nav ul li.title {
+  flex: 1;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  cursor: default;
+  user-select: none;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  transition: .5s;
+}
+
+nav ul li:hover a {
+  color: #00ccfe;
+}
+
+nav ul li i {
+  font-size: 25px;
+}
+
+nav ul li.button {
+  display: none;
+}
+
+nav ul li.button.hide i:before {
+  content: '\f00d';
+}
+
+.fab {
+  padding: 3px;
+}
+
+.fab::before {
+  padding: 5px;
+}
+
+@media all and (max-width: 768px) {
+  nav {
+    padding: 5px 30px;
+  }
+
+  nav ul li.items {
+    width: 100%;
+    display: none;
+  }
+
+  nav ul li.items.show {
+    display: block;
+  }
+
+  nav ul li.button {
+    display: block;
+  }
+
+  nav ul li.items:hover {
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #00ccff,
+                inset 0 0 10px #00ccfe;
+  }
+
+  nav ul li.items:hover:after {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  
+  /* NAGŁÓWKI */
+
+  #gallery {
+    background: #011833;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  
+  #overview_bar, #spec_bar {
+    background: #011833;
+    width: 100%;
+    height: 22rem;
+    flex-shrink: 0;
+  }
+  
+  #overview_bar, #spec_bar, #gallery_bar p {
+    display: flex;
+    width: auto;
+    height: 4.5rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  
+  
+  /* PRZEGLĄD */
+  
+  
+  
+  #view {
+    background-image: url("picture/orange-nissan-gt-r.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 250px;
+  }
+  
+  .group_overview {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+  }
+  
+  #text1,
+  #text2 p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 15px 15px 0 15px;
+  }
+  
+  #text3,
+  #text4 p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 15px 0 15px 0;
+  }
+  
+  #text5,
+  #text6 p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 15px 15px 15px;
+  }
+  
+  .text-container {
+    flex: 1;
+  }
+  
+  #photo_overview img {
+    width: 100%; 
+    border-radius: 5%;
+    margin-top: 15px;
+    box-shadow: 5px 5px 10px rgba(2, 0, 0, 0.5);
+  }
+
+  
+  
+  /* SPECYFIKACJA */
+  
+  
+  
+  .spec-list {
+    list-style: none;
+    background-color: lightgray;
+    padding: 0px 10px 10px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 0.85rem;
+  }
+  
+  .spec-list > li {
+    font-weight: bold;
+    padding-top: 10px;
+    color: black;
+  }
+  
+  .spec-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+  }
+  
+  .spec-list ul li {
+    margin-left: 20px;
+    position: relative;
+    color: black;
+  }
+  
+  .spec-list ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: -20px;
+  }
+  
+  #text1_spec p, #text10_spec p  {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 15px;
+    padding-top: 15px;
+  }
+  
+  #text10_spec p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 15px;
+    padding-bottom: 15px;
+    color: white;
+  }
+  
+  .group_engine, .group_breaks, .group_interior, .text-container_gr {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;
+    margin: 15px;
+  }
+  
+  #engine img, #breaks img, #interior img {
+    height: 300px;
+    width: 100%;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
+    margin-top: 15px;
+  }
+  
+  #container_spec {
+    background-image: url(picture/High-Res-Dark-Carbon-Fiber-Texture1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    backdrop-filter: blur(15px);
+  }
+  
+  
+  
+   /* GALERIA */
+  
+  
+   
+   .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery img {
+    width: 40%;
+    height: 150px;
+    margin: 0px 15px 30px 15px;
+    border-radius: 5%;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  /* STOPKA */
+  
+  
+  
+  .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 15px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 50px;
+    text-align: center;
+  }
+  
+  .footer-links li {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-contact {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 25px;
+  }
+  
+  .footer-contact p {
+    margin: 5px 0;
+  }
+  
+  .footer-contact a {
+    margin: 5px 0;
+    color: #fff;
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  /* NAGŁÓWKI */
+
+  #gallery {
+    background: #011833;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  
+  #overview_bar, #spec_bar {
+    background: #011833;
+    width: 100%;
+    height: 22rem;
+    flex-shrink: 0;
+  }
+  
+  #overview_bar, #spec_bar, #gallery_bar p {
+    display: flex;
+    width: auto;
+    height: 6.5rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  
+  
+  /* PRZEGLĄD */
+  
+  
+  
+  #view {
+    background-image: url("picture/orange-nissan-gt-r.jpg");
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 400px;
+  }
+  
+  .group_overview {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+  }
+  
+  #text1,
+  #text2 p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 15px 15px 0 15px;
+  }
+  
+  #text3,
+  #text4 p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 15px 0 15px 0;
+  }
+  
+  #text5,
+  #text6 p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 15px 15px 15px;
+  }
+  
+  .text-container {
+    flex: 1;
+  }
+  
+  #photo_overview img {
+    width: 100%; 
+    border-radius: 5%;
+    margin-top: 15px;
+    box-shadow: 5px 5px 10px rgba(2, 0, 0, 0.5);
+  }
+  
+
+  
+  /* SPECYFIKACJA */
+  
+  
+  
+  .spec-list {
+    list-style: none;
+    background-color: lightgray;
+    padding: 0px 10px 10px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+  
+  .spec-list > li {
+    font-weight: bold;
+    padding-top: 10px;
+    color: black;
+  }
+  
+  .spec-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+  }
+  
+  .spec-list ul li {
+    margin-left: 20px;
+    position: relative;
+    color: black;
+  }
+  
+  .spec-list ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: -20px;
+  }
+  
+  #text1_spec p  {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 15px;
+    padding-top: 15px;
+  }
+  
+  #text10_spec p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 15px;
+    padding-bottom: 15px;
+    color: white;
+  }
+  
+  .group_engine, .group_breaks, .group_interior, .text-container_gr {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;
+    margin: 15px;
+  }
+  
+  #engine img, #breaks img, #interior img {
+    height: 300px;
+    width: 350px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
+    margin-top: 15px;
+    margin-left: 25px;
+  }
+  
+  #container_spec {
+    background-image: url(picture/High-Res-Dark-Carbon-Fiber-Texture1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    backdrop-filter: blur(15px);
+  }
+  
+  
+  
+   /* GALERIA */
+  
+  
+   
+   .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery img {
+    width: 40%;
+    height: 250px;
+    margin: 0px 15px 30px 15px;
+    border-radius: 5%;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  /* STOPKA */
+  
+  
+  
+  .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo img {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 50px;
+    text-align: center;
+  }
+  
+  .footer-links li {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-contact {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  
+  .footer-contact p {
+    margin: 5px 0;
+  }
+  
+  .footer-contact a {
+    margin: 5px 0;
+    color: #fff;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+  /* NAGŁÓWKI */
+
+  #gallery {
+    background: #011833;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  
+  #overview_bar, #spec_bar {
+    background: #011833;
+    width: 100%;
+    height: 22rem;
+    flex-shrink: 0;
+  }
+  
+  #overview_bar, #spec_bar, #gallery_bar p {
+    display: flex;
+    width: auto;
+    height: 7.5rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  
+  
+  /* PRZEGLĄD */
+  
+  
+  
+  #view {
+    background-image: url("picture/orange-nissan-gt-r.jpg");
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 600px;
+  }
+  
+  .group_overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+  }
+  
+  #text1,
+  #text2 p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 15px 15px 0 15px;
+  }
+  
+  #text3,
+  #text4 p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 15px 0 15px 0;
+  }
+  
+  #text5,
+  #text6 p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 15px 15px 15px;
+  }
+  
+  .text-container {
+    flex: 1;
+  }
+  
+  #photo_overview img {
+    width: 500px; 
+    height: 425px;
+    border-radius: 5%;
+    margin-right: 15px;
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
+  }
+ 
+  
+  
+  /* SPECYFIKACJA */
+  
+  
+  
+  .spec-list {
+    list-style: none;
+    background-color: lightgray;
+    padding: 0px 10px 10px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  
+  .spec-list > li {
+    font-weight: bold;
+    padding-top: 10px;
+    color: black;
+  }
+  
+  .spec-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+  }
+  
+  .spec-list ul li {
+    margin-left: 20px;
+    position: relative;
+    color: black;
+  }
+  
+  .spec-list ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: -20px;
+  }
+  
+  #text1_spec p  {
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 15px;
+    padding-top: 15px;
+  }
+  
+  #text10_spec p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 15px;
+    padding-bottom: 15px;
+    color: white;
+  }
+  
+  .group_engine, .group_breaks, .group_interior, .text-container_gr {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;
+    margin: 15px;
+  }
+  
+  #engine img, #breaks img, #interior img {
+    height: 500px;
+    width: 550px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
+    margin-top: 15px;
+    margin-left: 25px;
+  }
+  
+  #container_spec {
+    background-image: url(picture/High-Res-Dark-Carbon-Fiber-Texture1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  
+   /* GALERIA */
+  
+  
+   
+   .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery img {
+    width: 45%;
+    height: 300px;
+    margin: 0px 15px 30px 15px;
+    border-radius: 5%;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  /* STOPKA */
+  
+  
+  
+  .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 5px 0 0 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo img {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 50px;
+    text-align: center;
+  }
+  
+  .footer-links li {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-contact {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  
+  .footer-contact p {
+    margin: 5px 0;
+  }
+  
+  .footer-contact a {
+    margin: 5px 0;
+    color: #fff;
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 1200px) {
+  /* NAGŁÓWKI */
+
+
+
+  #gallery {
+    background: #011833;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  #overview_bar, #spec_bar {
+    background: #011833;
+    width: 100%;
+    height: 22rem;
+    flex-shrink: 0;
+  }
+
+  #overview_bar, #spec_bar, #gallery_bar p {
+    display: flex;
+    width: auto;
+    height: 9.5rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+
+
+  /* PRZEGLĄD */
+
+
+
+  #view {
+    background-image: url("picture/orange-nissan-gt-r.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+  }
+
+  .group_overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #text1,
+  #text2 p {
+    font-size: 1.2rem;
+    text-align: justify;
+    margin: 15px 25px 0 15px;
+  }
+
+  #text3,
+  #text4 p {
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 15px 25px 15px 0;
+  }
+
+  #text5,
+  #text6 p {
+    font-size: 1.2rem;
+    text-align: justify;
+    margin: 0 25px 15px 15px;
+  }
+
+  .text-container {
+    flex: 1;
+    margin-left: 30px; 
+  }
+
+  #photo_overview img {
+    width: 100%; 
+    margin: 15px;
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+
+
+
+  /* SPECYFIKACJA */
+
+
+
+  .spec-list {
+    list-style: none;
+    background-color: lightgray;
+    padding: 0px 10px 10px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+
+  .spec-list > li {
+    font-weight: bold;
+    padding-top: 10px;
+  }
+
+  .spec-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+  }
+
+  .spec-list ul li {
+    margin-left: 20px;
+    position: relative;
+  }
+
+  .spec-list ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: -20px;
+  }
+
+  #text1_spec p {
+    color: white;
+    font-size: 1.3rem;
+    text-align: justify;
+    margin: 0 25px;
+    padding: 15px 0;
+  }
+
+  #text10_spec p {
+    font-size: 1.3rem;
+    text-align: justify;
+    margin: 0 25px;
+    padding: 15px 0;
+    color: white;
+  }
+
+  .group_engine, .group_breaks, .group_interior, .text-container_gr {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 35px 75px 0 100px;
+  }
+
+  #engine img, #breaks img, #interior img {
+    width: 500px; 
+    height: 400px;
+    margin: 0 100px 0 75px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
+  }
+
+  #container_spec {
+    background-image: url(picture/High-Res-Dark-Carbon-Fiber-Texture1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    backdrop-filter: blur(15px);
+  }
+
+
+
+  /* GALERIA */
+
+
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery img {
+    width: calc(20% - 10px);
+    height: 400px;
+    margin: 0px 15px 30px 15px;
+    border-radius: 5%;
+    box-sizing: border-box;
+  }
+
+
+
+  /* STOPKA */
+
+
+
+  .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 15px;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 50px;
+    text-align: center;
+  }
+
+  .footer-links li {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-contact {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-contact p {
+    margin: 10px 0;
+  }
+
+  .footer-contact a {
+    margin: 5px 0;
+    color: #fff;
+  }
+}
